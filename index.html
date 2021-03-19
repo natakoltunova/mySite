@@ -37,6 +37,7 @@
         </section>
       </div>
     </header>
+    <main>
     <section class="skills">
       <div class="container">
           <h2 class="skills__title">мои навыки</h2>
@@ -361,33 +362,25 @@
       <div class="container">
         <div class="slider__wrapper">
         <h2 class="slider__title">сертификаты</h2>
-        <svg class="slider__arrowl" viewBox="0 0 154 109">
-          <symbol id="Arrow" viewBox="-73.9 -55.3 135.9 85.4">
-            <g>
-              <polygon
-                points="-73.9,29.1 -6,-9.2 61.9,30.1 61.9,14.2 -6,-25.1 -73.9,14.2 "
-              />
-            </g>
-            <g>
-              <polygon
-                points="-73.9,-1 -6,-39.3 61.9,0 61.9,-16 -6,-55.3 -73.9,-16 "
-              />
-            </g>
-          </symbol>
-          <use
-            xlink:href="#Arrow"
-            width="135.9"
-            height="85.4"
-            id="XMLID_1_"
-            x="-73.9"
-            y="-55.3"
-            transform="matrix(1.007 0 0 -1.007 83.0005 42)"
-          />
-        </svg>
-        <div class="slider__item">
-          <img src="./img/sertificat.jpg" alt="" />
+        <div class="slider__item slider__fade">
+          <img src="./img/slider/programming-basic.jpg" alt="Сертификат основы программирования" />
         </div>
-        <svg class="slider__arrowr" viewBox="0 0 154 109">
+        <div class="slider__item slider__fade">
+          <img src="./img/slider/html-interactive.jpg" alt="Сертификат HTML/CSS интерактивный курс" />
+        </div>
+        <div class="slider__item slider__fade">
+          <img src="./img/slider/git.jpg" alt="Сертификат введение в git" />
+        </div>
+        <div class="slider__item slider__fade">
+          <img src="./img/slider/html5-css3.jpg" alt="Сертификат html5 css3" />
+        </div>
+        <div class="slider__item slider__fade">
+          <img src="./img/slider/js1.jpg" alt="Сертификат javascript первый уровень" />
+        </div>
+        <div class="slider__item slider__fade">
+          <img src="./img/slider/js2.jpg" alt="Сертификат javascript Второй уровень" />
+        </div>
+        <a class="slider__prev" onclick="plusSlides(1)"><svg class="slider__arrow-prev" viewBox="0 0 154 109">
           <symbol id="Arrow" viewBox="-73.9 -55.3 135.9 85.4">
             <g>
               <polygon
@@ -409,16 +402,39 @@
             y="-55.3"
             transform="matrix(1.007 0 0 -1.007 83.0005 42)"
           />
-        </svg>
+        </svg></a>
+        <a class="slider__next" onclick="plusSlides(-1)"><svg class="slider__arrow-next" viewBox="0 0 154 109">
+          <symbol id="Arrow" viewBox="-73.9 -55.3 135.9 85.4">
+            <g>
+              <polygon
+                points="-73.9,29.1 -6,-9.2 61.9,30.1 61.9,14.2 -6,-25.1 -73.9,14.2 "
+              />
+            </g>
+            <g>
+              <polygon
+                points="-73.9,-1 -6,-39.3 61.9,0 61.9,-16 -6,-55.3 -73.9,-16 "
+              />
+            </g>
+          </symbol>
+          <use
+            xlink:href="#Arrow"
+            width="135.9"
+            height="85.4"
+            id="XMLID_1_"
+            x="-73.9"
+            y="-55.3"
+            transform="matrix(1.007 0 0 -1.007 83.0005 42)"
+          />
+        </svg></a>
         <div class="slider__pagination">
-          <a href="" class="slider__pagination-item"></a>
-          <a href="" class="slider__pagination-item"></a>
-          <a href="" class="slider__pagination-item"></a>
-          <a href="" class="slider__pagination-item"></a>
-          <a href="" class="slider__pagination-item"></a>
-          <a href="" class="slider__pagination-item"></a>
-          <a href="" class="slider__pagination-item"></a>
-          <a href="" class="slider__pagination-item"></a>
+          <span class="slider__pagination-item" onclick="currentSlide(1)">1</span>
+          <span class="slider__pagination-item" onclick="currentSlide(2)">2</span>
+          <span class="slider__pagination-item" onclick="currentSlide(3)">3</span>
+          <span class="slider__pagination-item" onclick="currentSlide(4)">4</span>
+          <span class="slider__pagination-item" onclick="currentSlide(5)">5</span>
+          <span class="slider__pagination-item" onclick="currentSlide(6)">6</span>
+          <!-- <a href="" class="slider__pagination-item"></a>
+          <a href="" class="slider__pagination-item"></a> -->
         </div>
       </div>
       </div>
@@ -614,33 +630,35 @@
         <h2 class="sertificate__title">Результаты тестирований</h2>
         <div class="sertificate__items">
           <a class="sertificate__item"
-            ><img src="./img/test/test-html1.jpg" width="280px" alt=""
+            ><img src="./img/test-result/html-css-first.jpg" width="280px" alt=""
           /></a>
           <a class="sertificate__item"
-            ><img src="./img/test/test-html1.jpg" width="280px" alt=""
+            ><img src="./img/test-result/html-css-first.jpg" width="280px" alt=""
           /></a>
           <a class="sertificate__item"
-            ><img src="./img/test/test-html1.jpg" width="280px" alt=""
+            ><img src="./img/test-result/html-css-first.jpg" width="280px" alt=""
           /></a>
           <a class="sertificate__item"
-            ><img src="./img/test/test-html1.jpg" width="280px" alt=""
+            ><img src="./img/test-result/html-css-first.jpg" width="280px" alt=""
           /></a>
           <a class="sertificate__item"
-            ><img src="./img/test/test-html1.jpg" width="280px" alt=""
+            ><img src="./img/test-result/html-css-first.jpg" width="280px" alt=""
           /></a>
           <a class="sertificate__item"
-            ><img src="./img/test/test-html1.jpg" width="280px" alt=""
+            ><img src="./img/test-result/html-css-first.jpg" width="280px" alt=""
           /></a>
           <a class="sertificate__item"
-            ><img src="./img/test/test-html1.jpg" width="280px" alt=""
+            ><img src="./img/test-result/html-css-first.jpg" width="280px" alt=""
           /></a>
           <a class="sertificate__item"
-            ><img src="./img/test/test-html1.jpg" width="280px" alt=""
+            ><img src="./img/test-result/html-css-first.jpg" width="280px" alt=""
           /></a>
         </div>
       </div>
       </div>
     </section>
+  </main>
     <footer></footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>
