@@ -54,7 +54,7 @@ header {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 0 0;
-  padding: 60px 0 0 0;
+  padding: 0 0 0 0;
   box-sizing: border-box;
 }
 
@@ -64,6 +64,7 @@ nav {
   z-index: 3;
   width: 1366px;
   background-color: darkcyan;
+  opacity: 0.5;
   padding: 5px;
   box-sizing: border-box;
 }
@@ -79,13 +80,57 @@ nav {
 
 .nav__menu-item {
   margin: 0 0 0 80px;
-  font-size: 14px;
-  color: #dcdcdc;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  /* background-color: rgb(132, 193, 160); */
+  background-image: linear-gradient(
+    90deg,
+    rgba(132, 193, 160, 1) 0%,
+    rgba(228, 133, 16, 1) 0%,
+    rgba(227, 225, 8, 1) 16%,
+    rgba(48, 209, 56, 1) 26%,
+    rgba(44, 210, 200, 1) 42%,
+    rgba(70, 79, 172, 1) 65%,
+    rgba(91, 200, 133, 1) 74%,
+    rgba(154, 57, 159, 1) 82%,
+    rgba(207, 5, 56, 1) 95%,
+    rgba(158, 193, 171, 1) 99%,
+    rgba(43, 153, 98, 0.835171568627451) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
   text-transform: uppercase;
 }
 
-.introduce {
-  /* padding: 60px 0 0 0; */
+.nav__menu-item:hover {
+  background-image: linear-gradient(
+    90deg,
+    rgb(243, 243, 232) 16%,
+    rgb(186, 233, 188) 26%,
+    rgb(215, 240, 238) 42%,
+    rgb(178, 180, 206) 65%,
+    rgb(206, 228, 215) 74%,
+    rgb(227, 205, 228) 82%,
+    rgb(231, 195, 204) 95%,
+    rgba(158, 193, 171, 1) 99%,
+    rgba(183, 214, 199, 0.835) 100%
+  );
+  opacity: 1;
+}
+
+/* .introduce {
+  padding: 60px 0 0 0;
+} */
+
+.introduce__color {
+  width: 1366px;
+  height: 61px;
+  background-color: darkcyan;
+  opacity: 1;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 .introduce__title {
@@ -107,7 +152,7 @@ nav {
   text-align: justify;
 }
 
-.skills {
+.skills__wrapper {
   min-height: 660px;
   background: rgb(132, 193, 160);
   background: linear-gradient(
@@ -117,20 +162,18 @@ nav {
     rgba(43, 153, 98, 0.835171568627451) 70%,
     rgba(158, 179, 166, 1) 89%
   );
-  /* padding: 40px 80px; */
+  padding: 40px 80px;
   box-sizing: border-box;
 }
 
 .skills__title {
   display: flex;
   justify-content: center;
-  width: 200px;
   color: #e0ffff;
   font-size: 30px;
 }
 
 .skills__items {
-  width: 90%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -138,7 +181,7 @@ nav {
 
 .skills__item {
   display: flex;
-  width: 500px;
+  width: 550px;
 }
 
 .skills__item-icon {
@@ -156,8 +199,9 @@ nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #0b2349;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
+  text-align: justify;
 }
 
 .slider__wrapper {
@@ -223,11 +267,19 @@ nav {
   transform: rotate(-90deg);
 }
 
-/* .slider__arrow-prev:hover {
+.slider__arrow-prev:hover,
+.slider__arrow-next:hover {
   fill: #191970;
   opacity: 0.8;
   cursor: pointer;
-} */
+}
+
+.slider__arrow-prev:active,
+.slider__arrow-next:active {
+  fill: #f00b57;
+  /* opacity: 0.8; */
+  cursor: pointer;
+}
 
 .slider__pagination {
   position: absolute;
@@ -262,12 +314,14 @@ slider__pagination-item:hover {
     rgba(209, 233, 217, 1) 70%,
     rgba(111, 198, 189, 1) 89%
   );
+  color: rgb(213, 226, 230) 255, 255, 255;
 }
 
 .works__wrapper {
+  width: 100%;
   position: relative;
-  min-height: 900px;
-  padding: 50px 0 0;
+  min-height: 1000px;
+  padding: 0 0 50px;
   box-sizing: border-box;
   background: rgb(166, 169, 171);
   background: linear-gradient(
@@ -280,6 +334,10 @@ slider__pagination-item:hover {
 }
 
 .works__title {
+  width: 30%;
+  position: absolute;
+  top: 100px;
+  left: calc((100% / 2) - 200px);
   display: flex;
   justify-content: center;
   text-transform: capitalize;
@@ -293,21 +351,117 @@ slider__pagination-item:hover {
 
 .works__item {
   position: absolute;
-  top: 200px;
+  top: 100px;
   left: 50px;
-  background-image: url(../img/waxom.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: 0 0;
   width: 350px;
   height: 187px;
   box-sizing: border-box;
 }
 
+.works__items-link,
+.works__items-link1,
+.works__items-link2,
+.works__items-link3,
+.works__items-link4,
+.works__items-link5 {
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  width: 350px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 0 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: rgb(132, 193, 160);
+  background: linear-gradient(
+    90deg,
+    rgba(132, 193, 160, 1) 0%,
+    rgba(75, 159, 122, 1) 0%,
+    rgba(158, 179, 166, 1) 0%,
+    rgba(48, 209, 145, 1) 22%,
+    rgba(43, 153, 98, 0.835171568627451) 51%,
+    rgba(91, 200, 133, 1) 85%
+  );
+}
+
+.works__items-link1 {
+  top: 600px;
+}
+
+.works__items-link2 {
+  top: 900px;
+}
+
+.works__items-link3 {
+  right: 50px;
+}
+
+.works__items-link4 {
+  top: 600px;
+  right: 50px;
+}
+
+.works__items-link5 {
+  top: 900px;
+  right: 50px;
+}
+
+.works__items-link:hover,
+.works__items-link1:hover,
+.works__items-link2:hover,
+.works__items-link3:hover,
+.works__items-link4:hover,
+.works__items-link5:hover {
+  color: #fff;
+  background: rgb(132, 193, 160);
+  background: linear-gradient(
+    90deg,
+    rgba(132, 193, 160, 1) 0%,
+    rgba(75, 159, 122, 1) 0%,
+    rgba(89, 144, 122, 1) 6%,
+    rgba(48, 209, 145, 1) 22%,
+    rgba(158, 193, 171, 1) 68%,
+    rgba(43, 153, 98, 0.835171568627451) 76%,
+    rgba(91, 200, 133, 1) 85%,
+    rgba(70, 172, 109, 1) 91%,
+    rgba(57, 159, 96, 1) 94%,
+    rgba(76, 107, 94, 1) 100%
+  );
+}
+
+.works__items-link:active,
+.works__items-link1:active,
+.works__items-link2:active,
+.works__items-link3:active,
+.works__items-link4:active,
+.works__items-link5:active {
+  font-weight: 500;
+  background: rgb(132, 193, 160);
+  background: linear-gradient(
+    90deg,
+    rgba(132, 193, 160, 1) 0%,
+    rgba(75, 159, 122, 1) 0%,
+    rgba(8, 227, 139, 1) 3%,
+    rgba(48, 209, 145, 1) 8%,
+    rgba(210, 44, 182, 1) 48%,
+    rgba(70, 172, 109, 1) 91%,
+    rgba(91, 200, 133, 1) 93%,
+    rgba(57, 159, 96, 1) 94%,
+    rgba(158, 193, 171, 1) 99%,
+    rgba(43, 153, 98, 0.835171568627451) 100%,
+    rgba(76, 107, 94, 1) 100%
+  );
+}
+
 .works__item-hover {
   display: none;
   position: absolute;
-  top: 200px;
+  top: 100px;
   left: 50px;
   width: 350px;
   height: 187px;
@@ -353,7 +507,7 @@ slider__pagination-item:hover {
 
 .works__item1 {
   position: absolute;
-  top: 500px;
+  top: 400px;
   left: 50px;
   background-image: url(../img/waxom.jpg);
   background-repeat: no-repeat;
@@ -366,7 +520,7 @@ slider__pagination-item:hover {
 .works__item-hover1 {
   display: none;
   position: absolute;
-  top: 500px;
+  top: 400px;
   left: 50px;
   width: 350px;
   height: 187px;
@@ -384,7 +538,7 @@ slider__pagination-item:hover {
 
 .works__item2 {
   position: absolute;
-  top: 800px;
+  top: 700px;
   left: 50px;
   background-image: url(../img/waxom.jpg);
   background-repeat: no-repeat;
@@ -397,7 +551,7 @@ slider__pagination-item:hover {
 .works__item-hover2 {
   display: none;
   position: absolute;
-  top: 800px;
+  top: 700px;
   left: 50px;
   width: 350px;
   height: 187px;
@@ -415,8 +569,7 @@ slider__pagination-item:hover {
 
 .works__item3 {
   position: absolute;
-  top: 200px;
-  right: 50px;
+  top: 100px;
   right: 50px;
   background-image: url(../img/waxom.jpg);
   background-repeat: no-repeat;
@@ -429,7 +582,7 @@ slider__pagination-item:hover {
 .works__item-hover3 {
   display: none;
   position: absolute;
-  top: 200px;
+  top: 100px;
   right: 50px;
   width: 350px;
   height: 187px;
@@ -447,7 +600,7 @@ slider__pagination-item:hover {
 
 .works__item4 {
   position: absolute;
-  top: 500px;
+  top: 400px;
   right: 50px;
   background-image: url(../img/waxom.jpg);
   background-repeat: no-repeat;
@@ -460,7 +613,7 @@ slider__pagination-item:hover {
 .works__item-hover4 {
   display: none;
   position: absolute;
-  top: 500px;
+  top: 400px;
   right: 50px;
   width: 350px;
   height: 187px;
@@ -478,7 +631,7 @@ slider__pagination-item:hover {
 
 .works__item5 {
   position: absolute;
-  top: 800px;
+  top: 700px;
   right: 50px;
   background-image: url(../img/waxom.jpg);
   background-repeat: no-repeat;
@@ -491,7 +644,7 @@ slider__pagination-item:hover {
 .works__item-hover5 {
   display: none;
   position: absolute;
-  top: 800px;
+  top: 700px;
   right: 50px;
   width: 350px;
   height: 187px;
@@ -508,7 +661,10 @@ slider__pagination-item:hover {
 }
 
 .wave {
-  width: 100%;
+  width: 30%;
+  position: absolute;
+  bottom: 55px;
+  left: calc((100% / 2) - 200px);
   display: flex;
   justify-content: center;
   align-items: center;
