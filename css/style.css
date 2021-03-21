@@ -40,6 +40,45 @@ body {
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  background-color: rgb(21, 124, 98);
+}
+::-webkit-scrollbar-track {
+  background-color: #999;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  height: 100px;
+  background: rgb(132, 193, 160);
+  background: linear-gradient(
+    0deg,
+    rgba(132, 193, 160, 1) 0%,
+    rgba(228, 133, 16, 1) 0%,
+    rgba(227, 225, 8, 1) 16%,
+    rgba(48, 209, 56, 1) 26%,
+    rgba(44, 210, 200, 1) 42%,
+    rgba(70, 79, 172, 1) 65%,
+    rgba(91, 200, 133, 1) 74%,
+    rgba(154, 57, 159, 1) 82%,
+    rgba(207, 5, 56, 1) 95%,
+    rgba(158, 193, 171, 1) 99%,
+    rgba(43, 153, 98, 0.835171568627451) 100%
+  );
+  border-radius: 3px;
+}
+::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+::-webkit-resizer {
+  background-color: #666;
+}
+
 .container {
   width: 1366px;
   margin: 0 auto;
@@ -64,7 +103,7 @@ nav {
   z-index: 3;
   width: 1366px;
   background-color: darkcyan;
-  opacity: 0.5;
+  opacity: 0.7;
   padding: 5px;
   box-sizing: border-box;
 }
@@ -800,21 +839,140 @@ slider__pagination-item:hover {
   margin: 0 0 0 443px;
 }
 
+.sertificate__tests {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sertificate__tests-img:hover {
+  fill: #b40c8a;
+  transform: scale(1.2);
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
 .sertificate__items {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0;
+  position: relative;
 }
 
 .sertificate__item {
   box-shadow: 28px 28px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
-  margin: 70px 0 0 0;
+  margin: 30px 0 0 0;
+}
+
+#sertificate {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sertificate__caption {
+  display: none;
+  position: absolute;
+  top: 50px;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(53, 48, 48);
+  width: 280px;
+  /* animation: fade .5s linear forwards; */
+}
+
+#sertificate:hover {
+  opacity: 0.7;
+}
+
+#sertificate:hover ~ .sertificate__caption {
+  display: block;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.sertificate__modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  z-index: 5;
+}
+
+/* Modal Content (Image) */
+.sertificate__modal-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.sertificate__modal-content {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.sertificate__close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #4fc091;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.sertificate__close:hover,
+.sertificate__close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
 }
 
 footer {
-  min-height: 400px;
+  display: flex;
+  min-height: 700px;
   background-color: darkcyan;
+  padding: 630px 0 0;
+  box-sizing: border-box;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 0 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  background-color: #063d3d;
+  color: rgb(234, 245, 240);
 }
