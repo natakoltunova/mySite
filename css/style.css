@@ -102,7 +102,7 @@ nav {
   top: 0;
   z-index: 3;
   width: 1366px;
-  background-color: darkcyan;
+  background-color: black;
   opacity: 0.7;
   padding: 5px;
   box-sizing: border-box;
@@ -166,7 +166,7 @@ nav {
 .introduce__color {
   width: 1366px;
   height: 61px;
-  background-color: darkcyan;
+  background-color: rgb(12, 24, 24);
   opacity: 1;
   padding: 5px;
   box-sizing: border-box;
@@ -867,7 +867,12 @@ slider__pagination-item:hover {
   margin: 30px 0 0 0;
 }
 
-#sertificate {
+#sertificate,
+#sertificate2,
+#sertificate3,
+#sertificate4,
+#sertificate5,
+#sertificate6 {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
@@ -876,36 +881,56 @@ slider__pagination-item:hover {
 .sertificate__caption {
   display: none;
   position: absolute;
-  top: 50px;
-  font-size: 20px;
+  top: 11px;
+  font-size: 16px;
   text-align: center;
-  color: rgb(53, 48, 48);
+  color: rgb(251, 250, 251);
   width: 280px;
   /* animation: fade .5s linear forwards; */
 }
 
-#sertificate:hover {
+#sertificate:hover,
+#sertificate2:hover,
+#sertificate3:hover,
+#sertificate4:hover,
+#sertificate5:hover,
+#sertificate6:hover {
   opacity: 0.7;
 }
 
 #sertificate:hover ~ .sertificate__caption {
   display: block;
-  background: transparent;
+  background: rgb(205, 32, 204);
+  background: linear-gradient(
+    270deg,
+    rgba(205, 32, 204, 1) 0%,
+    rgba(143, 43, 153, 0.835171568627451) 2%,
+    rgba(16, 228, 226, 1) 11%,
+    rgba(227, 8, 215, 1) 16%,
+    rgba(48, 209, 56, 1) 34%,
+    rgba(44, 210, 200, 1) 42%,
+    rgba(193, 158, 193, 1) 56%,
+    rgba(70, 79, 172, 1) 65%,
+    rgba(91, 200, 133, 1) 74%,
+    rgba(154, 57, 159, 1) 82%,
+    rgba(205, 5, 207, 1) 95%,
+    rgba(201, 5, 207, 1) 97%
+  );
   cursor: pointer;
 }
 
 /* The Modal (background) */
 .sertificate__modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 80px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%;
+  height: 100%;
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
   z-index: 5;
 }
@@ -916,12 +941,7 @@ slider__pagination-item:hover {
   display: block;
   width: 100%;
   max-width: 700px;
-}
-
-/* Add Animation - Zoom in the Modal */
-.sertificate__modal-content {
-  animation-name: zoom;
-  animation-duration: 0.6s;
+  animation: zoom 0.6s;
 }
 
 @keyframes zoom {
@@ -933,7 +953,6 @@ slider__pagination-item:hover {
   }
 }
 
-/* The Close Button */
 .sertificate__close {
   position: absolute;
   top: 15px;
@@ -951,12 +970,11 @@ slider__pagination-item:hover {
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
   .modal-content {
     width: 100%;
   }
-}
+} */
 
 footer {
   display: flex;
