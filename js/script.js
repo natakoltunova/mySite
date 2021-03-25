@@ -31,22 +31,72 @@ function showSlides(num) {
   dots[slideIndex - 1].className += ' active'
 }
 
-// Get the modal
-let modal = document.getElementById('modal')
+// РАЗДЕЛИТЬ
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-let img = document.getElementById('sertificate')
-let modalImg = document.getElementById('img01')
-
-img.onclick = function () {
-  modal.style.display = 'block'
-  modalImg.src = this.src
+function getModal(id) {
+  let modal = document.getElementById(id)
+  return modal
 }
 
-// Get the <span> element that closes the modal
-let span = document.getElementsByClassName('sertificate__close')[0]
+function getImg(id) {
+  let img = document.getElementById(id)
+  return img
+}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = 'none'
+function getModalImg(id) {
+  let modalImg = document.getElementById(id)
+  return modalImg
+}
+
+function getSpan(index) {
+  let span = document.getElementsByClassName('sertificate__close')[index]
+  return span
+}
+
+getImg('sertificate').onclick = function () {
+  getModal('modal').style.display = 'block'
+  getModalImg('img01').src = this.src
+  getSpan(0).onclick = function () {
+    getModal('modal').style.display = 'none'
+  }
+}
+
+getImg('sertificate2').onclick = function () {
+  getModal('modal2').style.display = 'block'
+  getModalImg('img02').src = this.src
+  getSpan(1).onclick = function () {
+    getModal('modal2').style.display = 'none'
+  }
+}
+
+getImg('sertificate3').onclick = function () {
+  getModal('modal3').style.display = 'block'
+  getModalImg('img03').src = this.src
+  getSpan(2).onclick = function () {
+    getModal('modal3').style.display = 'none'
+  }
+}
+
+getImg('sertificate4').onclick = function () {
+  getModal('modal4').style.display = 'block'
+  getModalImg('img04').src = this.src
+  getSpan(3).onclick = function () {
+    getModal('modal4').style.display = 'none'
+  }
+}
+
+getImg('sertificate5').onclick = function () {
+  getModal('modal5').style.display = 'block'
+  getModalImg('img05').src = this.src
+  getSpan(4).onclick = function () {
+    getModal('modal5').style.display = 'none'
+  }
+}
+
+getImg('sertificate6').onclick = function () {
+  getModal('modal6').style.display = 'block'
+  getModalImg('img06').src = this.src
+  getSpan(5).onclick = function () {
+    getModal('modal6').style.display = 'none'
+  }
 }
