@@ -117,11 +117,11 @@ nav {
   min-height: 20px;
 }
 
-.nav__menu-item {
+.nav__menu-link {
   margin: 0 0 0 80px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   /* background-color: rgb(132, 193, 160); */
   background-image: linear-gradient(
     90deg,
@@ -143,7 +143,7 @@ nav {
   text-transform: uppercase;
 }
 
-.nav__menu-item:hover {
+.nav__menu-link:hover {
   background-image: linear-gradient(
     90deg,
     rgb(243, 243, 232) 16%,
@@ -699,7 +699,8 @@ slider__pagination-item:hover {
   transition-duration: 0.2s;
 }
 
-.wave {
+.wave,
+.wave-resume {
   width: 30%;
   position: absolute;
   bottom: 55px;
@@ -712,7 +713,8 @@ slider__pagination-item:hover {
   height: 120px;
 }
 
-.wave__btn {
+.wave__btn,
+.wave__btn-resume {
   position: relative;
   display: flex;
   justify-content: center;
@@ -725,7 +727,8 @@ slider__pagination-item:hover {
   overflow: hidden;
 }
 
-.wave__btn:hover {
+.wave__btn:hover,
+.wave__btn-resume:hover {
   border-radius: 10px;
   transition: all 0.8s ease 0.2s;
   box-shadow: 0 0 40px rgba(111, 198, 189, 0.9);
@@ -735,7 +738,12 @@ slider__pagination-item:hover {
   top: -50px;
 }
 
-.wave__btn-text {
+.wave__btn-resume:hover .-wave__btn-waves-resume {
+  top: -50px;
+}
+
+.wave__btn-text,
+.wave__btn-text-resume {
   position: relative;
   z-index: 1;
   color: rgb(11, 46, 21);
@@ -743,7 +751,8 @@ slider__pagination-item:hover {
   letter-spacing: 5px;
 }
 
-.wave__btn-waves {
+.wave__btn-waves,
+.wave__btn-waves-resume {
   position: absolute;
   top: 0;
   left: 0;
@@ -755,7 +764,9 @@ slider__pagination-item:hover {
 }
 
 .wave__btn-waves:after,
-.wave__btn-waves:before {
+.wave__btn-waves:before,
+.wave__btn-waves-resume:after,
+.wave__btn-waves-resume:before {
   content: '';
   position: absolute;
   top: 0;
@@ -765,13 +776,15 @@ slider__pagination-item:hover {
   transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
 }
 
-.wave__btn-waves:before {
+.wave__btn-waves:before,
+.wave__btn-waves-resume:before {
   background-color: #dce1f0;
   border-radius: 48%;
   animation: waves 5s infinite linear;
 }
 
-.wave__btn-waves:after {
+.wave__btn-waves:after,
+.wave__btn-waves-resume:after {
   background-color: rgba(210, 226, 225, 0.5);
   border-radius: 44%;
   animation: waves 10s infinite linear;
@@ -787,6 +800,7 @@ slider__pagination-item:hover {
 }
 
 .resume {
+  position: relative;
   background-image: url(../img/post-it-1975179_1280.png);
   min-height: 900px;
   background-attachment: fixed;
@@ -804,8 +818,25 @@ slider__pagination-item:hover {
   text-align: center;
 }
 
+.resume__background {
+  padding: 30px 30px 0;
+  box-sizing: border-box;
+  background-color: black;
+  opacity: 0.6;
+}
+
+.resume__photo {
+  float: left;
+  opacity: 1;
+  z-index: 2;
+  margin: 0 20px 10px 0;
+}
+
 .resume__text {
+  margin: 0 0 30px;
   font-size: 20px;
+  color: white;
+  line-height: 2;
 }
 
 .sertificate {
