@@ -176,10 +176,18 @@ nav {
   margin: 60px 0 0 70px;
 }
 
+.introduce__title:hover {
+  color: white;
+}
+
 .introduce__title1 {
   margin: 60px 0 0 70px;
   font-size: 100px;
   mix-blend-mode: overlay;
+}
+
+.introduce__title1:hover {
+  color: white;
 }
 
 .introduce__text {
@@ -243,8 +251,28 @@ nav {
   text-align: justify;
 }
 
+.skills__item-text:hover {
+  background: rgba(1, 4, 26, 0.555);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.slider {
+  padding: 3%;
+  background: rgb(132, 193, 160);
+  background: linear-gradient(
+    90deg,
+    rgba(132, 193, 160, 1) 0%,
+    rgba(47, 205, 142, 1) 22%,
+    rgba(43, 153, 98, 0.835171568627451) 70%,
+    rgba(158, 179, 166, 1) 89%
+  );
+}
+
 .slider__wrapper {
   position: relative;
+  width: 94%;
   min-height: 880px;
   justify-content: center;
   padding: 60px 0 0 0;
