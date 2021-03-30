@@ -1,29 +1,36 @@
 //SLOW ANCHOR
-var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
-  V = 1 // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
-for (var i = 0; i < linkNav.length; i++) {
+
+//select all links to the anchor on the page
+const linkNav = document.querySelectorAll('[href^="#"]')
+// speed can have a fractional value through a point (the lower the value - the higher the speed)
+const speed = 0.6
+
+for (let i = 0; i < linkNav.length; i++) {
   linkNav[i].addEventListener(
     'click',
     function (e) {
-      //по клику на ссылку
-      e.preventDefault() //отменяем стандартное поведение
-      var w = window.pageYOffset, // производим прокрутка прокрутка
-        hash = this.href.replace(/[^#]*(.*)/, '$1') // к id элемента, к которому нужно перейти
-      ;(t = document.querySelector(hash).getBoundingClientRect().top), // отступ от окна браузера до id
+      //by clicking on the link override (отменяем) the default behavior
+      e.preventDefault()
+      let scrol = window.pageYOffset // scrolling
+      // to id of element to which you need to go
+      let hash = this.href.replace(/[^#]*(.*)/, '$1')
+      // (отступ) indent from browser window to id
+      ;(roof = document.querySelector(hash).getBoundingClientRect().top),
         (start = null)
-      requestAnimationFrame(step) // подробнее про функцию анимации [developer.mozilla.org]
+      //the method tells the browser that you want to animate and asks it to schedule a redraw at the next animation frame. As a parameter, the method receives a function that will be called before redrawing.
+      requestAnimationFrame(step)
       function step(time) {
         if (start === null) start = time
-        var progress = time - start,
-          r =
-            t < 0
-              ? Math.max(w - progress / V, w + t)
-              : Math.min(w + progress / V, w + t)
-        window.scrollTo(0, r)
-        if (r != w + t) {
+        let progress = time - start
+        let run =
+          roof < 0
+            ? Math.max(scrol - progress / speed, scrol + roof)
+            : Math.min(scrol + progress / speed, scrol + roof)
+        window.scrollTo(0, run)
+        if (run != scrol + roof) {
           requestAnimationFrame(step)
         } else {
-          location.hash = hash // URL с хэшем
+          location.hash = hash // URL with hash(#)
         }
       }
     },
