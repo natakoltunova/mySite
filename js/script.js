@@ -1,42 +1,68 @@
-//SLOW ANCHOR
-
-//select all links to the anchor on the page
-const linkNav = document.querySelectorAll('[href^="#"]')
-// speed can have a fractional value through a point (the lower the value - the higher the speed)
-const speed = 0.2
-
-for (let i = 0; i < linkNav.length; i++) {
-  linkNav[i].addEventListener(
-    'click',
-    function (e) {
-      //by clicking on the link override (отменяем) the default behavior
-      e.preventDefault()
-      let scrol = window.pageYOffset // scrolling
-      // to id of element to which you need to go
-      let hash = this.href.replace(/[^#]*(.*)/, '$1')
-      // (отступ) indent from browser window to id
-      ;(roof = document.querySelector(hash).getBoundingClientRect().top),
-        (start = null)
-      //the method tells the browser that you want to animate and asks it to schedule a redraw at the next animation frame. As a parameter, the method receives a function that will be called before redrawing.
-      requestAnimationFrame(step)
-      function step(time) {
-        if (start === null) start = time
-        let progress = time - start
-        let run =
-          roof < 0
-            ? Math.max(scrol - progress / speed, scrol + roof)
-            : Math.min(scrol + progress / speed, scrol + roof)
-        window.scrollTo(0, run)
-        if (run != scrol + roof) {
-          requestAnimationFrame(step)
-        } else {
-          location.hash = hash // URL with hash(#)
-        }
-      }
-    },
-    false
+//HELLO WORLD
+;(function () {
+  const timerId = setInterval(
+    () => (document.getElementById('hello').style.color = 'white'),
+    2000
   )
-}
+
+  const timerClear = setInterval(
+    () => (document.getElementById('hello').style.color = 'orchid'),
+    3000
+  )
+
+  setTimeout(() => {
+    clearInterval(timerId)
+  }, 8000)
+
+  setTimeout(() => {
+    clearInterval(timerClear)
+  }, 13000)
+
+  const elemHover = document.getElementById('hello')
+
+  elemHover.onmouseover = () => (elemHover.style.color = 'white')
+  elemHover.onmouseleave = () => (elemHover.style.color = 'orchid')
+})()
+
+//SLOW ANCHOR
+;(function () {
+  //select all links to the anchor on the page
+  const linkNav = document.querySelectorAll('[href^="#"]')
+  // speed can have a fractional value through a point (the lower the value - the higher the speed)
+  const speed = 0.2
+
+  for (let i = 0; i < linkNav.length; i++) {
+    linkNav[i].addEventListener(
+      'click',
+      function (e) {
+        e.preventDefault() //by clicking on the link override (отменяем) the default behavior
+        let scrol = window.pageYOffset // scrolling
+        // to id of element to which you need to go
+        let hash = this.href.replace(/[^#]*(.*)/, '$1')
+        // (отступ) indent from browser window to id
+        ;(roof = document.querySelector(hash).getBoundingClientRect().top),
+          (start = null)
+        //the method tells the browser that you want to animate and asks it to schedule a redraw at the next animation frame. As a parameter, the method receives a function that will be called before redrawing.
+        requestAnimationFrame(step)
+        function step(time) {
+          if (start === null) start = time
+          let progress = time - start
+          let run =
+            roof < 0
+              ? Math.max(scrol - progress / speed, scrol + roof)
+              : Math.min(scrol + progress / speed, scrol + roof)
+          window.scrollTo(0, run)
+          if (run != scrol + roof) {
+            requestAnimationFrame(step)
+          } else {
+            location.hash = hash // URL with hash(#)
+          }
+        }
+      },
+      false
+    )
+  }
+})()
 
 //SLIDER
 let slideIndex = 1
@@ -75,23 +101,19 @@ function showSlides(num) {
 // MODAL
 
 function getModal(id) {
-  let modal = document.getElementById(id)
-  return modal
-}
-
-function getImg(id) {
-  let img = document.getElementById(id)
-  return img
+  return document.getElementById(id)
 }
 
 function getModalImg(id) {
-  let modalImg = document.getElementById(id)
-  return modalImg
+  return document.getElementById(id)
 }
 
 function getSpan(index) {
-  let span = document.getElementsByClassName('sertificate__close')[index]
-  return span
+  return document.getElementsByClassName('sertificate__close')[index]
+}
+
+function getImg(id) {
+  return document.getElementById(id)
 }
 
 getImg('sertificate').onclick = function () {
