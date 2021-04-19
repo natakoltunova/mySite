@@ -232,14 +232,16 @@ nav {
 .skills__title {
   display: flex;
   justify-content: center;
-  color: #e0ffff;
+  color: #e7657b;
   font-size: 30px;
+  text-transform: capitalize;
 }
 
 .skills__items {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  list-style-type: none;
 }
 
 .skills__item {
@@ -423,7 +425,7 @@ slider__pagination-item:hover {
     transparent 52%
   );
   position: absolute;
-  top: 2915px;
+  top: 2900px;
   left: 0;
 }
 
@@ -451,7 +453,9 @@ slider__pagination-item:hover {
   display: flex;
   justify-content: center;
   text-transform: capitalize;
-  color: #4682b4;
+  color: #54e780;
+  padding: 0 0 15px 0;
+  border-bottom: 4px solid rgb(11, 209, 87);
 }
 
 .works__img img {
@@ -468,6 +472,7 @@ slider__pagination-item:hover {
   width: 350px;
   height: 187px;
   box-sizing: border-box;
+  transition: all 1500ms ease;
 }
 
 .works__item1 {
@@ -786,7 +791,11 @@ slider__pagination-item:hover {
 }
 
 .resume__title {
+  display: block;
+  padding: 10px;
   text-align: center;
+  color: rgb(102, 7, 97);
+  border-bottom: 4px solid rgb(255, 161, 10);
 }
 
 .resume__background {
@@ -796,18 +805,18 @@ slider__pagination-item:hover {
   opacity: 0.8;
 }
 
-.resume__photo {
-  float: left;
-  opacity: 1;
-  z-index: 2;
-  margin: 0 20px 10px 0;
-}
-
 .resume__text {
   margin: 0 0 30px;
   font-size: 20px;
   color: white;
   line-height: 2;
+}
+
+.resume__photo {
+  float: left;
+  opacity: 1;
+  z-index: 2;
+  margin: 0 20px 10px 0;
 }
 
 .sertificate {
@@ -845,6 +854,11 @@ slider__pagination-item:hover {
   width: 100%;
   display: flex;
   justify-content: center;
+  border-top: 4px solid #ff07d6;
+}
+
+.sertificate__tests-img {
+  margin: 15px 0 0 0;
 }
 
 .sertificate__tests-img:hover {
@@ -866,7 +880,7 @@ slider__pagination-item:hover {
 .sertificate__item {
   box-shadow: 28px 28px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
-  margin: 30px 0 0 0;
+  margin: 50px 0 0 0;
 }
 
 #sertificate,
@@ -880,28 +894,23 @@ slider__pagination-item:hover {
   transition: 0.3s;
 }
 
-.sertificate__caption {
-  display: none;
-  position: absolute;
-  top: 11px;
-  font-size: 16px;
-  text-align: center;
-  color: rgb(251, 250, 251);
-  width: 280px;
-  /* animation: fade .5s linear forwards; */
-}
-
-#sertificate:hover,
-#sertificate2:hover,
-#sertificate3:hover,
-#sertificate4:hover,
-#sertificate5:hover,
-#sertificate6:hover {
-  opacity: 0.7;
-}
-
-#sertificate:hover ~ .sertificate__caption {
+.sertificate__caption,
+.sertificate__caption2,
+.sertificate__caption3,
+.sertificate__caption4 {
   display: block;
+  position: absolute;
+  top: 8px;
+  left: -330px;
+  height: 40px;
+  padding: 10px 3px;
+  box-sizing: border-box;
+  min-width: 280px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 3%;
+  color: rgb(251, 250, 251);
   background: rgb(205, 32, 204);
   background: linear-gradient(
     270deg,
@@ -918,7 +927,39 @@ slider__pagination-item:hover {
     rgba(205, 5, 207, 1) 95%,
     rgba(201, 5, 207, 1) 97%
   );
-  cursor: pointer;
+  width: 280px;
+  transition: all 500ms ease;
+}
+
+.sertificate__caption3,
+.sertificate__caption4 {
+  left: auto;
+  right: -350px;
+}
+
+#sertificate:hover,
+#sertificate2:hover,
+#sertificate3:hover,
+#sertificate4:hover,
+#sertificate5:hover,
+#sertificate6:hover {
+  opacity: 0.7;
+}
+
+#sertificate:hover ~ .sertificate__caption {
+  left: 0;
+}
+
+#sertificate2:hover ~ .sertificate__caption2 {
+  left: 335px;
+}
+
+#sertificate3:hover ~ .sertificate__caption3 {
+  right: 335px;
+}
+
+#sertificate4:hover ~ .sertificate__caption4 {
+  right: 0;
 }
 
 /* The Modal (background) */
@@ -965,8 +1006,20 @@ slider__pagination-item:hover {
   transition: 0.3s;
 }
 
+.sertificate__arrow {
+  position: absolute;
+  top: 300px;
+  right: 250px;
+  color: #4fc091;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
 .sertificate__close:hover,
-.sertificate__close:focus {
+.sertificate__close:focus,
+.sertificate__arrow:hover,
+.sertificate__arrow:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
