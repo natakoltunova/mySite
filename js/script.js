@@ -99,70 +99,42 @@ function showSlides(num) {
 }
 
 // MODAL
-
-function getModal(id) {
-  return document.getElementById(id)
-}
-
-function getModalImg(id) {
-  return document.getElementById(id)
-}
-
-function getSpan(index) {
-  return document.getElementsByClassName('sertificate__close')[index]
-}
-
-function getImg(id) {
-  return document.getElementById(id)
-}
-
-getImg('sertificate').onclick = function () {
-  getModal('modal').style.display = 'block'
-  getModalImg('img01').src = this.src
-  getSpan(0).onclick = function () {
-    getModal('modal').style.display = 'none'
+;(function () {
+  function getModal(id) {
+    return document.getElementById(id)
   }
-}
 
-getImg('sertificate2').onclick = function () {
-  getModal('modal2').style.display = 'block'
-  getModalImg('img02').src = this.src
-  getSpan(1).onclick = function () {
-    getModal('modal2').style.display = 'none'
+  function getModalImg(id) {
+    return document.getElementById(id)
   }
-}
 
-getImg('sertificate3').onclick = function () {
-  getModal('modal3').style.display = 'block'
-  getModalImg('img03').src = this.src
-  getSpan(2).onclick = function () {
-    getModal('modal3').style.display = 'none'
+  function getSpan(index) {
+    return document.getElementsByClassName('sertificate__close')[index]
   }
-}
 
-getImg('sertificate4').onclick = function () {
-  getModal('modal4').style.display = 'block'
-  getModalImg('img04').src = this.src
-  getSpan(3).onclick = function () {
-    getModal('modal4').style.display = 'none'
+  function getImg(id) {
+    return document.getElementById(id)
   }
-}
 
-getImg('sertificate5').onclick = function () {
-  getModal('modal5').style.display = 'block'
-  getModalImg('img05').src = this.src
-  getSpan(4).onclick = function () {
-    getModal('modal5').style.display = 'none'
-  }
-}
+  const sertificates = [
+    { id: 'sertificate', modal: 'modal', img: 'img01', ordinal: 0 },
+    { id: 'sertificate2', modal: 'modal2', img: 'img02', ordinal: 1 },
+    { id: 'sertificate3', modal: 'modal3', img: 'img03', ordinal: 2 },
+    { id: 'sertificate4', modal: 'modal4', img: 'img04', ordinal: 3 },
+    { id: 'sertificate5', modal: 'modal5', img: 'img05', ordinal: 4 },
+    { id: 'sertificate6', modal: 'modal6', img: 'img06', ordinal: 5 },
+  ]
 
-getImg('sertificate6').onclick = function () {
-  getModal('modal6').style.display = 'block'
-  getModalImg('img06').src = this.src
-  getSpan(5).onclick = function () {
-    getModal('modal6').style.display = 'none'
+  for (let index = 0; index < sertificates.length; index++) {
+    getImg(sertificates[index].id).onclick = function () {
+      getModal(sertificates[index].modal).style.display = 'block'
+      getModalImg(sertificates[index].img).src = this.src
+      getSpan(sertificates[index].ordinal).onclick = function () {
+        getModal(sertificates[index].modal).style.display = 'none'
+      }
+    }
   }
-}
+})()
 
 //FORM
 document.addEventListener('DOMContentLoaded', function () {
