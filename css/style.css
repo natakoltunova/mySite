@@ -1287,7 +1287,7 @@ textarea.form__input {
 
 .prompts__main {
   width: 100%;
-  min-height: 1000px;
+  min-height: 3000px;
   background: rgb(34, 193, 195);
   background: linear-gradient(
     0deg,
@@ -1303,17 +1303,39 @@ textarea.form__input {
 .prompts__js-list {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .prompts__js-item {
   width: 550px;
   min-height: 200px;
+  margin: 0 0 50px 0;
   background-color: rgb(37, 33, 36);
   box-shadow: 28px 28px 28px rgba(0, 0, 0, 0.75), 0 20px 20px rgba(0, 0, 0, 0.5);
   opacity: 0.8;
   box-sizing: border-box;
 }
 .prompts__js-article {
+}
+
+.task {
+  padding: 25px;
+  box-sizing: border-box;
+  height: 400px;
+}
+.task__head {
+  color: #eff3f3;
+}
+.task__text {
+  color: #e6edee;
+  line-height: 1.75;
+}
+.task__code {
+  color: #e6edee;
+}
+
+.task__details {
+  color: #38eeee;
 }
 
 .header-portfolio {
